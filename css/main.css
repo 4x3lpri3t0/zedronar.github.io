@@ -8,6 +8,7 @@
 * {
   margin: 0;
   padding: 0;
+  margin-bottom: 30px;
 }
 
 html, body { height: 100%; }
@@ -482,3 +483,11 @@ a {
 .type-csharp .highlight .nn { color: #000000 }
 .type-csharp .highlight .s { color: #A31515 }
 .type-csharp .highlight .sc { color: #A31515 }
+
+/* CUSTOM AXEL */
+
+h1 { font-size: 40px;}
+h2 { font-size: 30px;}
+.highlight .kd { color: #05D; } /* Keyword.Declaration */
+.p { color: #999;}
+pre { color: #B5E88F;}
