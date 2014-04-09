@@ -43,9 +43,26 @@ Normally, the local variables within a function only exist for the duration of t
 
 The reason for this is that myFunc has become a *closure*. **A closure is a special kind of object that combines two things: a function, and the environment in which that function was created.**
 
+A more interesting example:
+
+{% highlight javascript %}
+function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  };
+}
 
 
-[Under construction...]
+var add5 = makeAdder(5);
+var add10 = makeAdder(10);
+
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
+{% endhighlight %}
+
+`makeAdder` is a *function factory* — it creates functions which can add a specific value to their argument. In the above example we use our function factory to create two new functions — one that adds 5 to its argument, and one that adds 10.
+
+`add5` and `add10` are both closures. **They share the same function body definition, but store different environments.** In add5's environment, x is 5. As far as add10 is concerned, x is 10.
 
 ---
 
