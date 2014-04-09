@@ -7,8 +7,6 @@ categories: javascript closures
 
 Closures are functions that refer to independent variables.
 
-i.e.:
-
 The function defined in the closure 'remembers' the environment in which it was created in.
 
 e.g.:
@@ -24,7 +22,8 @@ function init() {
 init();
 {% endhighlight %}
 
+[Under construction...]
 
-Check out the [MDN][mdn] for more info on how closures work.
+Check out [MDN][mdn] for more info on how closures work.
 
 [mdn]:    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures
