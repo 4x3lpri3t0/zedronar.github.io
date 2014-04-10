@@ -5,7 +5,7 @@ date:   2014-04-10 17:30:00
 categories: git
 ---
 
-### How to undo the last Git commit? ###
+### Undo the last Git commit? ###
 
 ```bash
 $ git commit ...              # You messed up, huh?
@@ -15,3 +15,16 @@ $ git add ...                 # Stage changes for commit.
 $ git commit -c ORIG_HEAD 	  # "reset" copies the old head to .git/ORIG_HEAD; redo the commit by starting with its log message. If you do not need to edit the message further, you can give -C option instead.
 ```
 [Source](http://stackoverflow.com/questions/927358/how-to-undo-the-last-git-commit)
+
+---
+
+### Add all files to a commit except a single file? ###
+
+```bash
+$ git add --all
+$ git reset -- [path/to/file]
+```
+
+[Source](http://stackoverflow.com/questions/4475457/add-all-files-to-a-commit-except-a-single-file)
+
+---
