@@ -71,7 +71,7 @@ Revert a change that you have committed:
 ```bash
 $ git revert <...>
 ```
-Remove any files from the tracked root directory that are not under git tracking:
+Remove *untracked* files:
 
 ```bash
 $ git clean -fdn
@@ -90,3 +90,7 @@ $ git clean -fd
 [Source](http://stackoverflow.com/questions/1146973/how-do-i-revert-all-local-changes-in-a-git-managed-project-to-previous-state)
 
 ---
+
+### Recover dropped stash ###
+
+See: [Source](http://stackoverflow.com/questions/89332/recover-dropped-stash-in-git)
