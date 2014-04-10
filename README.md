@@ -1,4 +1,4 @@
 zedronar.github.io
 ==================
 
-This is my personal web page. Here I'll have some projects made by myself and some other stuff.
+This is my personal blog. Here I'll post stuff about programming and software development in general.
