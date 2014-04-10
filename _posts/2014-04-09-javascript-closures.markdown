@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "JavaScript Closures"
+title:  "JavaScript: Closures"
 date:   2014-04-09 01:39:00
 categories: javascript closures
 ---

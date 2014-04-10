@@ -1,14 +1,11 @@
 ---
 layout: post
-title:  "Welcome to GitHub pages!"
+title:  "Started using: GitHub pages"
 date:   2014-04-08 14:00:00
 categories: github
 ---
 
-
-<h3><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>This page generator is an great way to create beautiful pages. After your page is generated, you can check out the new branch:</p>
 
 <pre><code>
 $ cd your_repo_root/repo_name
