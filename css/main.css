@@ -486,8 +486,9 @@ a {
 
 /* CUSTOM AXEL */
 
-h1 { font-size: 40px; }
-h2 { font-size: 30px; }
+h1 { font-size: 60px; }
+h2 { font-size: 45px; }
+h3 { font-size: 25px; }
 .highlight .kd { color: #05D; } /* Keyword.Declaration */
 .p { color: #999; }
 pre { color: #B5E88F; }

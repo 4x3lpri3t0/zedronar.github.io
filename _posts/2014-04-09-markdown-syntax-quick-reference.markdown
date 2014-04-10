@@ -50,7 +50,7 @@ Inline code is `escaped` with backticks
 
 # Lists #
 
-Unordered lists use *, + or 
+Unordered lists use *, + or -
 
     * This
     * is
