@@ -499,3 +499,5 @@ pre { color: #B5E88F; }
 ::-moz-selection {
   background: #68228B; /* Firefox */
 }
+
+#photo { float: left; margin-top: 10px; margin-right: 10px; }
