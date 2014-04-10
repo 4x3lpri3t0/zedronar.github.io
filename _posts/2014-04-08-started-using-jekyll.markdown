@@ -2,8 +2,10 @@
 layout: post
 title:  "Started using Jekyll"
 date:   2014-04-08 16:49:20
-categories: jekyll
+categories: jekyll update
 ---
+
+# Jekyll #
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.
 
