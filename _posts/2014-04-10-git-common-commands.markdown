@@ -5,7 +5,7 @@ date:   2014-04-10 17:30:00
 categories: git
 ---
 
-### Undo the last Git commit? ###
+### Undo the last Git commit ###
 
 ```bash
 $ git commit ...              # You messed up, huh?
@@ -18,7 +18,7 @@ $ git commit -c ORIG_HEAD 	  # "reset" copies the old head to .git/ORIG_HEAD; re
 
 ---
 
-### Add all files to a commit except a single file? ###
+### Add all files to a commit except a single file ###
 
 ```bash
 $ git add --all
