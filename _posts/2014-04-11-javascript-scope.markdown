@@ -5,9 +5,7 @@ date:   2014-04-11 11:30:00
 categories: javascript
 ---
 
-### The Cast ###
-
-Characters that interact to process the program var `a = 2;`:
+Elements that interact to process the program var `a = 2;`:
 
 **Engine**: responsible for start-to-finish compilation and execution of our JavaScript program.
 
@@ -21,7 +19,7 @@ To fully understand how JavaScript works, you need to begin to think like Engine
 
 When you see the program `var a = 2;`, you most likely think of that as one statement. But that's not how our new friend *Engine* sees it. In fact, *Engine* sees two distinct statements, one which *Compiler* will handle during compilation, and one which *Engine* will handle during execution.
 
-So, let's break down how *Engine* and friends will approach the program `var a = 2;`.
+So this is how *Engine* and friends will approach the program `var a = 2;`:
 
 The first thing *Compiler* will do with this program is perform lexing to break it down into tokens, which it will then parse into a tree. But when *Compiler* gets to code-generation, it will treat this program somewhat differently than perhaps assumed.
 
@@ -36,10 +34,6 @@ A reasonable assumption would be that *Compiler* will produce code that could be
 If *Engine* eventually finds a variable, it assigns the value `2` to it. If not, Engine will raise its hand and yell out an error!
 
 **To summarize**: two distinct actions are taken for a variable assignment: **First**, *Compiler* declares a variable (if not previously declared in the current scope), and **second**, when executing, *Engine* looks up the variable in *Scope* and assigns to it, if found.
-
-### Compiler Speak ###
-
-[Under construction]
 
 ---
 
