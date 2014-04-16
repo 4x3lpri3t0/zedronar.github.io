@@ -2,7 +2,7 @@
 layout: post
 title:  "JavaScript: Closures"
 date:   2014-04-09 01:39:00
-categories: javascript closures
+categories: javascript
 ---
 
 Closures are functions that refer to independent variables.

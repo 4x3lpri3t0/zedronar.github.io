@@ -502,3 +502,5 @@ pre { color: #B5E88F; }
 }
 
 #photo { float: left; margin-top: 10px; margin-right: 10px; }
+
+.category { color: red; font-size: 15px; }

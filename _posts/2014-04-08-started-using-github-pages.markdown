@@ -2,7 +2,7 @@
 layout: post
 title:  "Started using: GitHub pages"
 date:   2014-04-08 14:00:00
-categories: github
+categories: etc
 ---
 
 <p>This page generator is an great way to create beautiful pages. After your page is generated, you can check out the new branch:</p>

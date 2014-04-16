@@ -2,7 +2,7 @@
 layout: post
 title:  "Started using: Jekyll"
 date:   2014-04-08 16:49:20
-categories: jekyll
+categories: etc
 ---
 
 Jekyll is a templating tool, used mostly for bloggin.

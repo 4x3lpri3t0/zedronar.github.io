@@ -2,7 +2,7 @@
 layout: post
 title:  "Markdown: Syntax quick reference"
 date:   2014-04-09 21:00:00
-categories: markdown
+categories: etc
 ---
 
 Visual quick reference guide to the Markdown syntax:
