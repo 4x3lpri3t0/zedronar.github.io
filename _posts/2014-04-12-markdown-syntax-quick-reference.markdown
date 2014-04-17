@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Markdown: Syntax quick reference"
-date:   2014-04-09 21:00:00
+date:   2014-04-12 21:00:00
 categories: etc
 ---
 

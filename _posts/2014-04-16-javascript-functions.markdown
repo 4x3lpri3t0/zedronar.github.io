@@ -5,10 +5,54 @@ date:   2014-04-16 19:00:00
 categories: javascript
 ---
 
-### A ###
+### arguments array-like object ###
 
+You can create functions that are flexible about the number of parameters they accept. This is possible thanks to the `arguments` array-like object that is created automatically inside each function. Here's a function that simply returns whatever parameters are passed to it:
 
+```javascript
+function args() { return arguments; }
+
+args(); // []
+
+args( 1, 2, 3, 4, true, 'ninja'); // [1, 2, 3, 4, true, "ninja"]
+```
+
+By using the arguments array-like object you can make a `sumOnSteroids()` function to accept any number of parameters and add them all up.
+
+```javascript
+function sumOnSteroids() {
+	var res = 0;
+	var number_of_params = arguments.length;
+
+	for (var i = 0; i < number_of_params; i++) {
+		res += arguments[i];
+	}
+
+	return res;
+}
+
+sumOnSteroids(1, 1, 1); // 3
+
+sumOnSteroids(1, 2, 3, 4); // 10
+```
+
+Technically the `arguments` object is not an `Array` but an array-like object. It is similar to an `Array`, but does not have any `Array` properties except `length`.
+
+### Pre-defined Functions ###
+
+Functions that are built into the JavaScript engine and available for you to use:
+
+* parseInt()
+* parseFloat()
+* isNaN()
+* isFinite()
+* encodeURI()
+* decodeURI()
+* encodeURIComponent()
+* decodeURIComponent()
+* eval()
 
 ---
 
 [Source: "Object Oriented JavaScript"](http://www.amazon.com/Object-Oriented-JavaScript-Stoyan-Stefanov-ebook/dp/B0057UNEJC/)
+["Source: MDN"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/arguments)

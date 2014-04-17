@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Started using: GitHub pages"
-date:   2014-04-08 14:00:00
+date:   2014-04-12 14:00:00
 categories: etc
 ---
 
