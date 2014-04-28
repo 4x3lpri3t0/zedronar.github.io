@@ -91,7 +91,7 @@ The first one will return a usable URL, while the second one assumes you're only
 
 Takes a string input and executes it as JavaScript code:
 
-```javascript```
+```javascript
 eval('var ii = 2;');
 ii; // 2
 ```
