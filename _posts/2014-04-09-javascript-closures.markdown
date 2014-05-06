@@ -67,7 +67,39 @@ console.log(add10(2)); // 12
 `makeAdder` is a *function factory* — it creates functions which can add a specific value to their argument. In the above example we use our function factory to create two new functions — one that adds 5 to its argument, and one that adds 10.
 
 `add5` and `add10` are both closures. **They share the same function body definition, but store different environments.** In add5's environment, x is 5. As far as add10 is concerned, x is 10.
- 
+
+---
+
+# More Closures #
+
+
+### Closure #1 ###
+
+Take a look at this function:
+
+```javascript
+function f(){
+	var b = "b";
+	return function(){
+		return b;
+	}
+}
+```
+
+This function contains a variable `b`, which is local, and therefore inaccessible from the global space:
+
+```javascript
+b; // b is not defined
+```
+
+Check out the return value of `f()`: it's another function. This new function has access to its private space, to `f()`'s space and to the global space. So it can see `b`. Because `f()` is callable from the global space (it's a global function), you can call it and assign the returned value to another global variable. The result — a new global function that has access to `f()`'s private space.
+
+```javascript
+var n = f();
+n(); // "b"
+```
+
+
 
 ---
 
