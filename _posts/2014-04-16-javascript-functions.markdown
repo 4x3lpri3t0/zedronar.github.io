@@ -100,7 +100,102 @@ So eval('var ii = 2;') is the same as simply var ii = 2;
 
 eval() can be useful sometimes, but should be avoided if there are other options. Most of the time there will be alternatives and, in most cases, the alternatives are more elegant and easier to write and maintain ("Eval is evil").
 
+### Functions that return Functions ###
 
+A function always returns a value, and if it doesn't do it explicitly with return, then it it does so implicitly by returning `undefined`.
+A function can return only one value and this value could be another function.
+
+```javascript
+function a() {
+	alert('A!');
+	return function(){
+		alert('B!');
+	};
+}
+```
+
+In this example the function a() does its job (says A!) and returns another function that does something else (says B!). You can assign the return value to a variable and then use this variable as a normal function:
+
+```javascript
+var newFunc = a();
+newFunc();
+```
+
+Here the first line will alert A! and the second will alert B!.
+
+If you want to execute the returned function immediately, without assigning it to a new variable, you can simply use another set of parentheses. The end result will be the same.
+
+```javascript
+a()();
+```
+
+### Function, rewrite yourself ###
+
+Because a function can return a function, you can use the new function to replace the old one.
+
+You can take the value returned by the call to `a()` to overwrite the actual `a()` function:
+
+```javascript
+a = a();
+```
+
+The above alerts A!, but the next time you call `a()` it alerts B!.
+
+This is useful when a function has some initial one-off work to do. The function overwrites itself after the first call in order to avoid doing unnecessary repetitive work every time it's called.
+
+In the example above, we redefined the function from the outside, we got the returned value and assigned it back to the function. But the function can actually rewrite itself from the inside:
+
+```javascript
+function a() {
+	alert('A!');
+	a = function(){
+		alert('B!');
+	};
+}
+```
+
+If you call this function for the first time, it will:
+
+* Alert A! (consider this as being the one-off preparatory work)
+* Redefine the global variable a, assigning a new function to it
+
+Every subsequent time that the function is called, it will alert B!
+
+---
+
+Example that combines several of the techniques discussed:
+
+```javascript
+var a = function() {
+	function someSetup(){
+		var setup = 'done';
+	}
+	function actualWork() {
+		alert('Worky-worky');
+	}
+	someSetup();
+	return actualWork;
+}();
+```
+
+In this example:
+
+- You have private functions `someSetup()` and `actualWork()`.
+- You have a self-invoking function, function `a()` calls itself using the parentheses following its definition.
+
+The function executes for the first time, calls `someSetup()` and then returns a reference to the variable `actualWork`, which is a function.
+
+Notice that there are no parentheses in the return, because it is returning a function reference, not the result of invoking this function.
+
+Because the whole thing starts with `var a =...`, the value returned by the self-invoked function is assigned to a.
+
+What will the code above alert when:
+
+1. It is initially loaded?
+1. You call a() afterwards?
+
+These techniques could be really useful when working in the browser environment.
+Because different browsers can have different ways of achieving the same thing and you know that the browser features don't change between function calls, you can have a function determine the best way to do the work in the current browser, then redefine itself, so that the "browser feature sniffing" is done only once.
 
 ---
 
