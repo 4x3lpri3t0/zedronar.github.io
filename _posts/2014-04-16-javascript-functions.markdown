@@ -199,6 +199,87 @@ Because different browsers can have different ways of achieving the same thing a
 
 ---
 
+### Interesting Array Methods ###
+
+In addition to the methods inherited from the parent object, array objects also have some more useful methods, such as `sort()`, `join()`, and `slice()`, among others.
+
+Let's take one array and experiment with some of these methods:
+
+```javascript
+var a = [3, 5, 1, 7, 'test'];
+```
+
+The `push()` method appends a new element at the end of the array. The `pop()` method removes the last element. `a.push('new')` works just like `a[a.length] = 'new'` and `a.pop()` is the same as `a.length--`.
+
+`push()` returns the length of the changed array, `pop()` returns the element that it removed.
+
+```javascript
+>>> a.push('new') // 6
+
+>>> a // [3, 5, 1, 7, "test", "new"]
+
+>>> a.pop() // "new"
+
+>>> a // [3, 5, 1, 7, "test"]
+```
+
+The `sort()` method sorts the array and returns the modified array. In the next example, after the sort, both `a` and `b` contain pointers to the same array.
+
+```javascript
+>>> var b = a.sort();
+
+>>> b // [1, 3, 5, 7, "test"]
+
+>>> a // [1, 3, 5, 7, "test"]
+```
+
+`join()` returns a string containing the values of all the elements in the array, concatenated together using the string parameter passed to `join()`
+
+```javascript
+>>> a.join(' is not '); // "1 is not 3 is not 5 is not 7 is not test"
+```
+
+`slice()` returns a piece of the array without modifying the source array. The first parameter to `slice()` is the **start index** and the second is the **end index** (both indices are zero-based).
+
+```javascript
+>>> b = a.slice(1, 3); // [3, 5]
+
+>>> b = a.slice(0, 1); // [1]
+
+>>> b = a.slice(0, 2); // [1, 3]
+```
+
+After all the slicing, the source array is still the same:
+
+```javascript
+>>> a // [1, 3, 5, 7, "test"]
+```
+
+`splice()` modifies the source array. It removes a slice, returns it, and optionally fills the gap with new elements. The first two parameters define start and end of the slice to be removed; the other parameters pass the new values.
+
+```javascript
+>>> b = a.splice(1, 2, 100, 101, 102); // [3, 5]
+
+>>> a // [1, 100, 101, 102, 7, "test"]
+```
+
+Filling the gap with new elements is optional and you can skip it:
+
+```javascript
+>>> a.splice(1, 3)
+[100, 101, 102]
+>>> a
+[1, 7, "test"]
+```
+
+---
+
+### Function ###
+
+Functions are actually objects. There is a built-in constructor function called `Function()` which allows an alternative (but not recommended) way to create a function.
+
+---
+
 [Source: "Object Oriented JavaScript"](http://www.amazon.com/Object-Oriented-JavaScript-Stoyan-Stefanov-ebook/dp/B0057UNEJC/)
 
 [Source: MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/arguments)
