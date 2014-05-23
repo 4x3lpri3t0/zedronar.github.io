@@ -278,6 +278,245 @@ Filling the gap with new elements is optional and you can skip it:
 
 Functions are actually objects. There is a built-in constructor function called `Function()` which allows an alternative (but not recommended) way to create a function.
 
+The following three ways of defining a function are equivalent:
+
+```javascript
+function sum(a, b) {return a + b;};
+sum(1, 2)
+
+3
+
+var sum = function(a, b) {return a + b;};
+sum(1, 2)
+
+3
+
+var sum = new Function('a', 'b', 'return a + b;');
+sum(1, 2)
+
+3
+```
+
+*Best Practice:* **Do not use the Function() constructor**. As with eval() and setTimeout(), always try to stay away from cases where you pass JavaScript code as a string.
+
+---
+
+### Properties of the Function Objects ###
+
+Like any other object, functions have a `constructor` property that contains a reference to the `Function()` constructor function.
+
+```javascript
+function myfunc(a){return a;}
+myfunc.constructor
+
+// Function()
+```
+
+Functions also have a `length` property, which contains the number of parameters the function accepts.
+
+```javascript
+function myfunc(a, b, c){return true;}
+myfunc.length
+
+// 3
+```
+
+There is another interesting property, which doesn't exist in the ECMA standard, but is implemented across the browsers — the `caller` property. This returns a reference to the function that called our function. Let's say there is a function `A()` that gets called from function `B()`. If inside `A()` you put `A.caller`, it will return the function `B()`.
+
+```javascript
+function A(){return A.caller;}
+function B(){return A();}
+B()
+
+// B()
+```
+
+This could be useful if you want your function to respond differently depending on the function from which it was called. If you call `A()` from the global space (outside of any function), `A.caller` will be `null`.
+
+```javascript
+A()
+
+// null
+```
+
+The most important property of a function is the `prototype` property.
+
+* The `prototype` property of a function contains an object
+* It is only useful when you use this function as a constructor
+* All objects created with this function keep a reference to the `prototype` property and can use its properties as their own
+
+Here's a quick example to demonstrate the `prototype` property. Let's start with a simple object that has a property name and a method `say()`.
+
+```javascript
+var some_obj = {
+	name: 'Ninja',
+	say: function(){
+		return 'I am a ' + this.name;
+	}
+}
+```
+
+If you create a hollow function, you can verify that it automatically has a `prototype` property that contains an empty object.
+
+```javascript
+function F(){}
+typeof F.prototype
+
+// "object"
+```
+
+**It gets interesting when you modify the prototype property. You can replace the default empty object with any other object.** Let's assign our some_obj to the prototype.
+
+```javascript
+F.prototype = some_obj;
+```
+
+Now, using the function `F()` as a constructor function, you can create a new object `obj` which will have access to the properties of `F.prototype` as if it were its own.
+
+```javascript
+var obj = new F();
+obj.name
+
+// "Ninja"
+
+obj.say()
+
+// "I am a Ninja"
+```
+
+There will be more about the `prototype` property in the next chapter.
+
+---
+
+### Methods of Function objects ###
+
+The function objects, being a descendant of the top parent `Object`, get the default methods, such as `toString()`.
+
+When invoked on a function, the `toString()` method returns the source code of the function.
+
+```javascript
+function myfunc(a, b, c) {return a + b + c;}
+myfunc.toString()
+
+// "function myfunc(a, b, c) {
+// return a + b + c;
+// }"
+```
+
+If you try to peek into the source code of the built-in functions, you'll get the hardly useful `[native code]` string:
+
+```javascript
+eval.toString()
+
+// "function eval() {
+// [native code]
+// }"
+```
+
+Two useful methods of the function objects are `call()` and `apply()`. They allow your objects to **borrow methods from other objects and invoke them as their own**. This is an easy and powerful way to reuse code.
+Let's say you have a `some_obj` object, which contains the method `say()`
+
+```javascript
+var some_obj = {
+	name: 'Ninja',
+	say: function(who){
+		return 'Haya ' + who + ', I am a ' + this.name;
+	}
+}
+```
+
+You can call the `say()` method which internally uses `this.name` to gain access to its own `name` property.
+
+```javascript
+some_obj.say('Dude');
+
+// "Haya Dude, I am a Ninja"
+```
+
+Now let's create a simple object `my_obj`, which only has a `name` property:
+
+```javascript
+my_obj = {name: 'Scripting guru'};
+```
+
+`my_obj` likes some_obj's `say()` method so much that it wants to invoke it as its own. This is possible using the `call()` method of the `say()` function object:
+
+```javascript
+some_obj.say.call(my_obj, 'Dude');
+
+// "Haya Dude, I am a Scripting guru"
+```
+
+It worked! But what happened here? We invoked the `call()` method of the `say()` function object passing two parameters: the object `my_obj` and the string 'Dude'.
+
+The result is that when `say()` was invoked, the references to `this` value that it contains, pointed to `my_obj`. This way `this.name` didn't return 'Ninja', but 'Scripting guru' instead.
+
+If you have more parameters to pass when invoking the `call()` method, you just keep adding them:
+
+```javascript
+some_obj.someMethod.call(my_obj, 'a', 'b', 'c');
+```
+
+If you don't pass an object as a first parameter to `call()` or pass `null`, the global object will be assumed.
+
+The method `apply()` works the same way as `call()` but with the difference that all parameters you want to pass to the method of the other object are passed as an array.
+
+The following two lines are equivalent:
+
+```javascript
+some_obj.someMethod.apply(my_obj, ['a', 'b', 'c']);
+some_obj.someMethod.call(my_obj, 'a', 'b', 'c');
+```
+
+Continuing the example above, you can use:
+
+```javascript
+>>> some_obj.say.apply(my_obj, ['Dude']);
+
+// "Haya Dude, I am a Scripting guru"
+```
+
+---
+
+### The arguments object revisited ###
+
+From inside a function, you have access to something called `arguments`, which contains the values of all parameters passed to the function:
+
+```javascript
+function f() {return arguments;}
+f(1,2,3)
+
+// [1, 2, 3]
+```
+
+`arguments` looks like an array but is actually an array-like object. It resembles an array because it contains indexed elements and a `length` property. However, the similarity ends here, as **arguments doesn't provide any of the array methods**, such as `sort()` or `slice()`.
+
+The `arguments` object has another interesting property — the `callee` property.
+
+This contains a reference to the function being called. If you create a function that returns `arguments.callee` and you call this function, it will simply return a reference to itself.
+
+```javascript
+function f(){return arguments.callee;}
+f()
+
+// f()
+```
+
+`arguments.callee` allows anonymous functions to call themselves recursively. Here's an example:
+
+```javascript
+(
+	function(count){
+		if (count < 5) {
+			alert(count);
+			arguments.callee(++count);
+		}
+	}
+)(1)
+```
+
+Here you have an anonymous function that receives a `count` parameter, alerts it, and then calls itself with an incremented count. The whole function is wrapped in parentheses and **followed by another set of parentheses, which invokes the function right away, passing the initial value 1**. The result of this code is four alerts showing the numbers 1, 2, 3, and 4.
+
 ---
 
 [Source: "Object Oriented JavaScript"](http://www.amazon.com/Object-Oriented-JavaScript-Stoyan-Stefanov-ebook/dp/B0057UNEJC/)
