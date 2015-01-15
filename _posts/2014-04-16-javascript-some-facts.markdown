@@ -2,7 +2,7 @@
 layout: post
 title:  "Javascript: Some facts"
 date:   2014-04-16 15:30:00
-categories: 2014
+categories: "2014"
 ---
 
 ### Falsey values ###

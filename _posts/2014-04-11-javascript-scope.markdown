@@ -2,7 +2,7 @@
 layout: post
 title:  "Javascript: Scope"
 date:   2014-04-11 11:30:00
-categories: 2014
+categories: "2014"
 ---
 
 Elements that interact to process the program var `a = 2;`:
