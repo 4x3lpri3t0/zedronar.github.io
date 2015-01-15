@@ -2,7 +2,7 @@
 layout: post
 title:  "Git: Common commands"
 date:   2014-04-10 17:30:00
-categories: git
+categories: 2014
 ---
 
 ### Undo the last Git commit ###

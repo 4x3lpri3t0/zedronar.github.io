@@ -2,7 +2,7 @@
 layout: post
 title:  "Javascript: Compiler Theory"
 date:   2014-04-11 10:00:00
-categories: javascript
+categories: 2014
 ---
 
 Despite the fact that JavaScript falls under the general category of "dynamic" or "interpreted" languages, it is in fact a **compiled language**. It is *not* compiled well in advance, as are many traditionally-compiled languages, nor are the results of compilation portable among various distributed systems.

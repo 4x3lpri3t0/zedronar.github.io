@@ -2,7 +2,7 @@
 layout: post
 title:  "Javascript: OOP"
 date:   2014-04-16 13:30:00
-categories: javascript
+categories: 2014
 ---
 
 ### Object-Oriented Programming ###

@@ -2,7 +2,7 @@
 layout: post
 title:  "Javascript: Functions"
 date:   2014-04-16 19:00:00
-categories: javascript
+categories: 2014
 ---
 
 ### arguments array-like object ###

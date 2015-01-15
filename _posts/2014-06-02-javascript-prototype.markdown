@@ -2,7 +2,7 @@
 layout: post
 title:  "Javascript: Prototype"
 date:   2014-06-02 15:30:00
-categories: javascript
+categories: 2014
 ---
 
 ### The prototype property ###
