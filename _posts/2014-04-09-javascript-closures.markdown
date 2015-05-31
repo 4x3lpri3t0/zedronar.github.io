@@ -238,7 +238,6 @@ function f() {
 
 ---
 
-
 # Getter/Setter #
 
 Imagine you have a variable that will contain a very specific range of values. You don't want to expose this variable because you don't want just any part of the code to be able to alter its value. You protect this variable inside a function and provide two additional functions — one to *get* the value and one to *set* it. The one that sets it could contain some logic to validate a value before assigning it to the protected variable.
@@ -261,11 +260,16 @@ var getValue, setValue;
 In this case, the function that contains everything is a self-invoking anonymous function. It defines `setValue()` and `getValue()` as global functions, while the secret variable remains local and inaccessible directly.
 
 ```javascript
-getValue(); // 0
+getValue();
+// 0
+
 setValue(123);
-getValue(); // 123
+
+getValue();
+// '123'
 ```
 
+---
 
 # Iterator #
 

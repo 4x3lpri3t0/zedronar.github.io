@@ -13,10 +13,12 @@
     </head>
     <body>
 
+        <!-- {% assign sortedcats = site.categories | sort %} -->
+
         <div class="site">
           <div class="header">
             <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <!-- {% for cat in site.categories %}
+            <!-- {% for cat in sortedcats %}
                 <a class="extra" href="/">{{ cat[0] }}</a>
             {% endfor %} -->
           </div>
