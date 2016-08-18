@@ -7,11 +7,11 @@ categories: "2014"
 
 Visual quick reference guide to the Markdown syntax:
 
-
+<br />
 
 # Headers #
 
-  
+<br />
 
 ## Level two header ##
 
