@@ -7,32 +7,27 @@ categories: "2014"
 
 Visual quick reference guide to the Markdown syntax:
 
-\s\s
-\s\s
+
 
 # Headers #
 
-\s\s
-\s\s
+
 
 ## Level two header ##
 
     ## Level two header ##
 
-\s\s
-\s\s
+
 
 ### Level three header ###
 
     ### Level three header ###
 
-\s\s
-\s\s
+
 
 Headers continue as you’d imagine, with extra hashes.
 
-\s\s
-\s\s
+
 
 
 # Links #
@@ -41,8 +36,7 @@ Headers continue as you’d imagine, with extra hashes.
 
 [This is a link](http://www.darkcoding.net)
 
-\s\s
-\s\s
+
 
 
 # Blockquote #
@@ -51,8 +45,7 @@ Headers continue as you’d imagine, with extra hashes.
 
 > This is quoted
 
-\s\s
-\s\s
+
 
 
 # Code #
@@ -67,8 +60,7 @@ Or inline:
 
 Inline code is `escaped` with backticks
 
-\s\s
-\s\s
+
 
 
 # Lists #
@@ -91,8 +83,7 @@ Ordered lists use number followed by period.
 1. with
 1. numbers
 
-\s\s
-\s\s
+
 
 
 # Horizontal lines #
@@ -103,8 +94,7 @@ Three or more dashes
 
  ---
 
-\s\s
-\s\s
+
 
 
 # Emphasis #
@@ -119,8 +109,7 @@ _italic_ or *italic*
 
 __bold__ or **bold**
 
-\s\s
-\s\s
+
 
 
 # Escaping #
@@ -131,13 +120,11 @@ If you don’t want some of these rules to apply, they can be escaped by precedi
 
 This is \*\*not\*\* in bold.
 
-\s\s
-\s\s
+
 
  ---
 
-\s\s
-\s\s
+
 
 See also: The full [Markdown syntax][markdown]
 
