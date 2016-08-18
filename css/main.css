@@ -4,16 +4,14 @@
 /*
 /*****************************************************************************/
 
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 30px;
-}
-
 html, body { height: 100%; }
 
 body {
+  /* Global Reset */
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  
   background-color: #FFF;
   font: 13.34px Helvetica, Arial, sans-serif;
   font-size: small;
@@ -504,3 +502,5 @@ pre { color: #B5E88F; }
 #photo { float: left; margin-top: 10px; margin-right: 10px; }
 
 .category { color: red; font-size: 15px; }
+
+.footer div { margin-bottom: 0px; }
