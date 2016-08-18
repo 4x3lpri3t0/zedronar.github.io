@@ -11,24 +11,24 @@ Visual quick reference guide to the Markdown syntax:
 
 # Headers #
 
-
+  
 
 ## Level two header ##
 
     ## Level two header ##
 
-
+  
 
 ### Level three header ###
 
     ### Level three header ###
 
-
+  
 
 Headers continue as you’d imagine, with extra hashes.
 
 
-
+  
 
 # Links #
 
@@ -36,7 +36,7 @@ Headers continue as you’d imagine, with extra hashes.
 
 [This is a link](http://www.darkcoding.net)
 
-
+  
 
 
 # Blockquote #
@@ -45,7 +45,7 @@ Headers continue as you’d imagine, with extra hashes.
 
 > This is quoted
 
-
+  
 
 
 # Code #
@@ -60,7 +60,7 @@ Or inline:
 
 Inline code is `escaped` with backticks
 
-
+  
 
 
 # Lists #
@@ -83,7 +83,7 @@ Ordered lists use number followed by period.
 1. with
 1. numbers
 
-
+  
 
 
 # Horizontal lines #
@@ -94,7 +94,7 @@ Three or more dashes
 
  ---
 
-
+  
 
 
 # Emphasis #
@@ -109,7 +109,7 @@ _italic_ or *italic*
 
 __bold__ or **bold**
 
-
+  
 
 
 # Escaping #
@@ -120,11 +120,11 @@ If you don’t want some of these rules to apply, they can be escaped by precedi
 
 This is \*\*not\*\* in bold.
 
-
+  
 
  ---
 
-
+  
 
 See also: The full [Markdown syntax][markdown]
 
