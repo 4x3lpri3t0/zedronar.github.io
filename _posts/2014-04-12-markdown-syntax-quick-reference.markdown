@@ -15,16 +15,16 @@ Visual quick reference guide to the Markdown syntax:
 \s\s
 \s\s
 
-    ## Level two header ##
-
 ## Level two header ##
 
-\s\s
-\s\s
+    ## Level two header ##
 
-    ### Level three header ###
+\s\s
+\s\s
 
 ### Level three header ###
+
+    ### Level three header ###
 
 \s\s
 \s\s
