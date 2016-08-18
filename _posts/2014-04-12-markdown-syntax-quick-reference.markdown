@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Markdown: Syntax quick reference"
+title:  "Markdown: Syntax reference"
 date:   2014-04-12 21:00:00
 categories: "2014"
 ---
@@ -12,13 +12,19 @@ Visual quick reference guide to the Markdown syntax:
 
     # Level one header #
 
+
+
 # Level one header #
 
     ### Level three header ###
 
+
+
 ### Level three header ###
 
 Headers continue as you’d imagine, with extra hashes.
+
+
 
 
 # Links #
@@ -28,11 +34,15 @@ Headers continue as you’d imagine, with extra hashes.
 [This is a link](http://www.darkcoding.net)
 
 
+
+
 # Blockquote #
 
     > This is quoted
 
 > This is quoted
+
+
 
 
 # Code #
@@ -46,6 +56,8 @@ Or inline:
     Inline code is `escaped` with backticks
 
 Inline code is `escaped` with backticks
+
+
 
 
 # Lists #
@@ -69,6 +81,8 @@ Ordered lists use number followed by period.
 1. numbers
 
 
+
+
 # Horizontal lines #
 
 Three or more dashes
@@ -76,7 +90,9 @@ Three or more dashes
     ---
 
  ---
-	
+
+
+
 
 # Emphasis #
 
@@ -91,6 +107,8 @@ _italic_ or *italic*
 __bold__ or **bold**
 
 
+
+
 # Escaping #
 
 If you don’t want some of these rules to apply, they can be escaped by preceding the special character with a backslash.
@@ -99,7 +117,9 @@ If you don’t want some of these rules to apply, they can be escaped by precedi
 
 This is \*\*not\*\* in bold.
 
+
  ---
+
 
 See also: The full [Markdown syntax][markdown]
 
